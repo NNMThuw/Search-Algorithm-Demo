@@ -1,0 +1,139 @@
+\documentclass[12pt,a4paper,onecolumn,openany,twoside]{report}
+\usepackage{titletoc}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection})}
+
+\usepackage[
+  inner	=	2.0cm, % Margen interior
+  outer	=	2.0cm, % Margen exterior
+  top	=	2.0cm, % Margen superior
+  bottom=	2.0cm, % Margen inferior
+]{geometry}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage[framemethod=TikZ]{mdframed}
+\renewcommand{\baselinestretch}{1.2} 
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{yfonts}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.90,0.90,0.90}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=false,
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=10pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4
+}
+
+\lstset{style=mystyle,}
+%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{caption}
+\DeclareCaptionFormat{myformat}{#3}
+\captionsetup[algorithm]{format=myformat}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmicfunction}{\textbf{procedure}}
+\newcommand{\algorithmicendfunction}{\algorithmicend\ \algorithmicfunction}
+\renewcommand{\algorithmiccomment}[1]{ // #1}
+\definecolor{cmt}{RGB}{87,180,74}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{setspace} 
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage[hidelinks]{hyperref} 
+\usepackage{lipsum}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{cases} 
+\usepackage{graphicx}
+
+\setlength{\parindent}{0pt}
+\usepackage{xcolor}
+\usepackage{tikz} 
+\usepackage{scrextend}
+
+\usetikzlibrary{calc}
+\usepackage{comment}
+\renewcommand{\thefigure}{\arabic{figure}}
+%%%%%%%%%%%%%%%%% 
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,calc}
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+
+\newcommand*{\SpaceReservedForComments}{2.5cm}%
+\newcommand*{\HorizontalOffset}{-0.5em}%
+\newcommand*{\VerticalOffset}{0.7ex}%
+\newcommand*{\AddNote}[4][]{%
+    %% #1 = draw options
+    %% #2 = top line number to start comment from
+    %% #3 = bottom line number where comment ends
+    %% #4 = text of comment
+    \begin{tikzpicture}[overlay, remember picture]
+        \draw [decoration={brace,amplitude=0.5em},decorate,ultra thick,red, #1]
+            ($(#3)+(\HorizontalOffset,-\VerticalOffset)$) --  ($(#2)+(\HorizontalOffset,\VerticalOffset)$)
+            node [align=left, text width=\SpaceReservedForComments-1.0em, pos=0.5, anchor=east] {#4};
+    \end{tikzpicture}
+}%
+
+\makeatletter% Add a \tkizmark for each line so we can reference it later
+    \algrenewcommand\alglinenumber[1]{\tikzmark{\arabic{ALG@line}}\tiny#1:}
+\makeatother
+
+%%%%%%%%%%%%%%%%% 
+\usetikzlibrary{shapes.multipart}
+
+\tikzset{block/.style={
+        font=\sffamily,
+        draw=black,
+        thin,
+        fill=pink!50,
+        rectangle split,
+        rectangle split horizontal,
+        rectangle split parts=#1,
+        outer sep=0pt},
+        %
+        gblock/.style={
+            block,
+            rectangle split parts=#1,
+            fill=green!30}
+        }
+%%%%%%%%%%%%%%%%%%%%
+\usepackage{tocloft}
+
+\setlength{\cftbeforesecskip}{2pt}
+\setlength{\cftbeforechapskip}{3pt}
+\setlength{\cftbeforepartskip}{8pt}
+\usepackage{subcaption}
+\usepackage[table]{xcolor}
